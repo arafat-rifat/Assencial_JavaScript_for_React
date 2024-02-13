@@ -296,15 +296,32 @@ booksAfterUpdate;
 
 // console.log("jonas");
 
-async function getTodos() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/todos");
-  const data = await res.json();
-  console.log(data);
+// async function getTodos() {
+//   const res = await fetch("https://jsonplaceholder.typicode.com/todos");
+//   const data = await res.json();
+//   console.log(data);
 
-  return data;
-}
+//   return data;
+// }
 
-const todos = getTodos();
-console.log(todos);
+// const todos = getTodos();
+// console.log(todos);
 
-console.log("jonas");
+// console.log("jonas");
+
+
+// Destructuring
+
+const book = getBook(2);
+
+// const title = book.title;
+// const author = book.author;
+
+const {title , author ,publicationDate , genres , hasMovieAdaptation, pages} = book;
+
+console.log(author,title ,genres);
+
+const [primaryGenres , secondaryGenre] = genres;
+
+console.log(primaryGenres,secondaryGenre)
+
