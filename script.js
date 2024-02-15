@@ -432,6 +432,11 @@ function getTotalReviewCount(book){
 
  */
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/*
+
 //  Lets Take a very Quick look about  3 functional Array Methods(map,filter,reduce,sort)
 
 const books = getBooks();
@@ -523,3 +528,15 @@ booksAfterAdd;
 // To Shorted a array We use Filter to shorter the Previous Array
 const booksAfterDelete = booksAfterAdd.filter((book) => book.id !== 3);
 booksAfterDelete;
+
+// Update book object in the array
+const booksAfterUpdate = booksAfterDelete.map((book) => book.id === 1 ? {...book, pages :1210} : book);
+booksAfterUpdate;
+
+*/
+
+// Asyncronus JavaScript Technique :- Promises
+
+fetch('https://jsonplaceholder.typicode.com/todos').then((res) => res.json()).then((data) => console.log(data))
+
+console.log('rifat')
