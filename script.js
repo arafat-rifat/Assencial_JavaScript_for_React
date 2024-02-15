@@ -311,10 +311,6 @@ booksAfterUpdate;
 
 // Destructuring
 
-
-
-
-
 /*
 const book = getBook(3);
 
@@ -436,4 +432,26 @@ function getTotalReviewCount(book){
 
  */
 
-//  Lets Take a very Quick look about  3 functional Array Methods
+//  Lets Take a very Quick look about  3 functional Array Methods(map,filter,reduce,sort)
+
+const books = getBooks();
+
+// demo
+const x = [1, 2, 3, 4, 5, 6, 7].map((el) => el * 2);
+
+console.log(x);
+
+const titles = books.map((book) => book.title)
+
+titles
+
+
+const essencialData = books.map((book)=> ({
+  // If we use third bracket in arrow function then we must write return for returning some thing because After {} it will be function declaration.
+  // For Autometicly Returning SomeThing Then We use () Before the {}
+ 
+    title : book.title,
+    author : book.author,
+}) );
+
+essencialData;
