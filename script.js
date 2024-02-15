@@ -434,7 +434,6 @@ function getTotalReviewCount(book){
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
 /*
 
 //  Lets Take a very Quick look about  3 functional Array Methods(map,filter,reduce,sort)
@@ -538,6 +537,18 @@ booksAfterUpdate;
 // Asyncronus JavaScript Technique :- Promises
 // Fetching Data Using Promises Method
 
-fetch('https://jsonplaceholder.typicode.com/todos').then((res) => res.json()).then((data) => console.log(data))
+// fetch('https://jsonplaceholder.typicode.com/todos').then((res) => res.json()).then((data) => console.log(data))
 
-console.log('rifat')
+// console.log('rifat')
+
+//We do it in Cleaner way using Asyng Await function
+
+async function getTodos() {
+ const res = await fetch("https://jsonplaceholder.typicode.com/todos");
+
+ const data = await res.json()
+ console.log("🚀 ~ getTodos ~ data:", data)
+}
+getTodos();
+
+console.log('rifat2')
