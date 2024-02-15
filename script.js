@@ -309,19 +309,131 @@ booksAfterUpdate;
 
 // console.log("jonas");
 
-
 // Destructuring
 
-const book = getBook(2);
+
+
+
+
+/*
+const book = getBook(3);
 
 // const title = book.title;
 // const author = book.author;
 
-const {title , author ,publicationDate , genres , hasMovieAdaptation, pages} = book;
+const { title, author, publicationDate, genres, hasMovieAdaptation, pages } =
+  book;
 
-console.log(author,title ,genres);
+console.log(author, title, genres);
 
-const [primaryGenres , secondaryGenre] = genres;
+const [primaryGenres, secondaryGenre, ...otherGenres] = genres;
 
-console.log(primaryGenres,secondaryGenre)
+console.log(primaryGenres, secondaryGenre, otherGenres);
 
+const newGenres = ["Epiq Fentacy", ...genres];
+newGenres;
+
+const updatedBook = {
+  ...book,
+
+  // Adding A new Property
+  moviePublicationDate: "2001-12-19",
+
+  // OverWriting A existing Property
+
+  pages: 1210,
+};
+
+updatedBook;
+
+//  Arrow Functions(Revisions)
+
+// Lets Example With Publications Date , We Use it as a function to get Year Value.
+
+// If We Do it In function Decleration
+
+// function getYear(str){
+//   return str.split("-")[0];
+// }
+
+
+// Also Do it In Function Decleration Using Arrow Function
+
+const getYear = (str) => str.split("-")[0];
+console.log(getYear(publicationDate));
+
+
+// Tamplate Litterels
+
+const summary = `${title}, is a ${pages}--page long book, was written by ${author} and published in ${ 
+  getYear(publicationDate) }, The book has ${hasMovieAdaptation ? "" : "Not"} been adapted a movie`;
+summary;
+
+//Turnary Operator
+ const pagesRange = pages > 1000 ? "Over a thousand" : "Less than 1000";
+
+ pagesRange;
+
+ console.log(`the book has ${pagesRange} pages`)
+
+
+// "And" Operator and "OR" Operator have a Features Called Short Circuiting
+
+console.log(hasMovieAdaptation && "Thid Book has a movie");
+
+
+// Falsy :- 0, "" , null , undefined
+// When First Operend true the Exicute the Secoend Operend
+
+console.log('Jonas' && "Some String")
+
+console.log(0 && "Some String")
+
+// OR Operator (When First Operend True Then Exicute The First Operend)
+console.log(true || "Some String")
+console.log(false || "Some String")
+
+// End Short Circuiting Part
+
+console.log(book.translations.spanish)
+
+const spanishTranshlation = book.translations.spanish || "Not Translated";
+
+spanishTranshlation;
+
+// But There Is A problem.In this Situation When First Value Is 0 it also Exicute as a falsy value 
+// For The Example
+
+// console.log(book.reviews.librarything.reviewsCount)
+// In this moment I have a Data =  0; But In short circuirting They Count This as a Falsy Value and and Exicuite 2nd Operend;
+
+// const countWrong = book.reviews.librarything.reviewsCount || "NO DATA";
+
+// countWrong;
+
+// End Example
+// So what is the Solution ???
+// JavaScript has Recently added a new Logical Operator Which Is Called the Nullish coalescing  Operator
+
+// const count = book.reviews.librarything.reviewsCount ?? "no data";
+// count;
+
+// So we can say that  Nullish coalescing  Operator retun second value when first value is null or undefined; But not when it is 0 or empty string;
+
+////////////////////////////////////////////////////
+
+// Lets now take a quick look at the very important optional chaining operator;
+
+function getTotalReviewCount(book){
+
+  const goodreads = book.reviews?.goodreads?.reviewsCount;
+  const librarything = book.reviews?.librarything?.reviewsCount ?? 0;
+  return  goodreads + librarything;
+
+}
+
+ console.log(getTotalReviewCount(book))
+
+ */
+
+//  Lets Take a very Quick look about  3 functional Array Methods
