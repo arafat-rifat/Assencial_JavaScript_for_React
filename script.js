@@ -446,12 +446,45 @@ const titles = books.map((book) => book.title)
 titles
 
 
+////////////////////////////////////////////////
+
+function getTotalReviewCount(book){
+
+  const goodreads = book.reviews?.goodreads?.reviewsCount;
+  const librarything = book.reviews?.librarything?.reviewsCount ?? 0;
+  return  goodreads + librarything;
+
+}
+
 const essencialData = books.map((book)=> ({
   // If we use third bracket in arrow function then we must write return for returning some thing because After {} it will be function declaration.
   // For Autometicly Returning SomeThing Then We use () Before the {}
  
     title : book.title,
     author : book.author,
+    reviewCount : getTotalReviewCount(book),
 }) );
 
 essencialData;
+
+// Array Filter Method
+// As the name says we can use the filter method in order to filter out some elements of the array based on a condition.
+
+const longBooksWithMovie = books.filter((book) => 
+ book.pages >  500
+).filter((book) => book.hasMovieAdaptation)
+
+longBooksWithMovie;
+
+const adventureBooks = books.filter((book) => book.genres.includes("adventure")).map((book) => book.title)
+adventureBooks;
+
+// Reduce Method
+
+const pagesAllBooks = books.reduce((sum,book)=> sum + book.pages,0)
+
+pagesAllBooks;
+
+// Sort Method
+
+const num = [3,47,1,9,6];
