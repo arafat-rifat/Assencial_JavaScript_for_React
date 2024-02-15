@@ -488,3 +488,38 @@ pagesAllBooks;
 // Sort Method
 
 const num = [3,47,1,9,6];
+
+
+// Using Slide here For Create new Array to not muted with orginal array(Its a Tricks)
+const sorted = num.slice().sort((a,b) => a - b) //This is for assending away
+// a is first element and b is 2nd element
+// For decending we just reverse it b-a
+// Its a mutable method its not a functional method
+sorted;
+num;
+
+///////////////////////////////////
+
+const sortedByPages = books.slice().sort((a,b) => a.pages - b.pages);
+sortedByPages;
+
+////////////////////////////////////
+// Working With Immutables arrays
+//////////
+
+
+// Add a Book object to array
+
+const newBook ={
+  id:6,
+  title: "Harry Potter and the Chamber of Secrets",
+  author: 'J.K .Rowling',
+}
+
+const booksAfterAdd = [...books,newBook];
+booksAfterAdd;
+
+// Delete a Book Object From Array
+// To Shorted a array We use Filter to shorter the Previous Array
+const booksAfterDelete = booksAfterAdd.filter((book) => book.id !== 3);
+booksAfterDelete;
